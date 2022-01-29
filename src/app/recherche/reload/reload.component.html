@@ -1,0 +1,32 @@
+<div nz-row>
+  <div nz-col nzSpan="8" class = "r1">
+    <a
+      nz-popconfirm
+      nzPopconfirmTitle="Are you sure to reload all books?"
+      nzOkText="Ok"
+      nzCancelText="Cancel"
+      (nzOnConfirm)="Confirm_reload()"
+      (nzOnCancel)="Cancel()"
+    >Reload book</a>
+  </div>
+  <div nz-col nzSpan="8" class = "r2">
+    <a
+      nz-popconfirm
+      nzPopconfirmTitle="Are you sure to reload all graphs?"
+      nzOkText="Ok"
+      nzCancelText="Cancel"
+      (nzOnConfirm)="Confirm_reload_graph()"
+      (nzOnCancel)="Cancel()"
+    >Reload graph</a>
+  </div>
+  <div nz-col nzSpan="8" class = "r3">
+    <a
+      nz-popconfirm
+      nzPopconfirmTitle="Are you sure to reload all ranks?"
+      nzOkText="Ok"
+      nzCancelText="Cancel"
+      (nzOnConfirm)="Confirm_reload_rank()"
+      (nzOnCancel)="Cancel()"
+    >Reload rank</a>
+  </div>
+</div>

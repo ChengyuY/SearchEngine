@@ -1,0 +1,56 @@
+<div class = 'search'>
+  <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton" class = 'inputs'>
+    <input type="text" nz-input placeholder="input search text" [(ngModel)]="text" />
+  </nz-input-group>
+  <br />
+  <ng-template #suffixButton>
+    <button nz-button nzType="primary" nzSize="large"
+            nzSearch (click)="recherche()">Recherche</button>
+  </ng-template>
+</div>
+<nz-table
+  #listBook [nzData]="bookList"  [nzFrontPagination]="true"
+  [nzPageSize]="pageSize" [nzPageIndex]="curPage" [nzLoading]="load">
+  <nz-skeleton [nzActive]="true" [nzLoading]="!listBook.data"></nz-skeleton>
+  <thead>
+  <tr>
+    <th>Word</th>
+    <th>Book Id</th>
+    <th>Cpt</th>
+    <th>Operation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of listBook.data; let i = index; trackBy: trackByBookId">
+    <td>{{ book.word }}</td>
+    <td>{{ book.bookid }}</td>
+    <td>{{ book.cpt }}</td>
+    <td>
+      <a (click)="showContent(book.bookid)">Check</a>
+    </td>
+  </tr>
+  <nz-modal [(nzVisible)]="isVisible"
+            nzTitle="Book"
+            (nzOnCancel)="handleExit()"
+            (nzOnOk)="handleExit()"
+            nzOkText="Confirm"
+            nzCancelText="Exit">
+    <ng-container *nzModalContent>
+      <nz-list [nzDataSource]="book"
+               [nzRenderItem]="item"
+               [nzItemLayout]="'horizontal'"
+               [nzSize] = "'large'"
+               [nzLoading] = "load">
+        <ng-template #item let-item>
+          <nz-comment [nzAuthor]="item.author" nzsize="'large'">
+            <nz-comment-content nzsize="large">
+              <p>{{ item.contents }}</p>
+            </nz-comment-content>
+          </nz-comment>
+        </ng-template>
+      </nz-list>
+    </ng-container>
+  </nz-modal>
+  </tbody>
+</nz-table>
+

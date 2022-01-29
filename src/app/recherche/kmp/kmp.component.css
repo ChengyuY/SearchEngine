@@ -1,0 +1,9 @@
+.search {
+  text-align: center;
+  justify-content: center;
+}
+
+.inputs {
+  max-width: 400px;
+  position: center;
+}

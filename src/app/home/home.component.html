@@ -1,0 +1,46 @@
+<nz-layout class="layout">
+  <nz-sider nzTheme="light" nzCollapsible [(nzCollapsed)]="isCollapsed" nzBreakpoint="lg" [nzCollapsedWidth]="0">
+    <div class="logo">
+      <img alt="logo" src="assets/img.png">
+    </div>
+    <ul nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzTitle="Recherche" nzIcon="search" >
+        <ul>
+          <li nz-menu-item routerLink="/home/recherche">Recherche</li>
+          <li nz-menu-item routerLink="/home/recherche/avance">Recherche avancée</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Classement" nzIcon="ordered-list" >
+        <ul >
+          <li nz-menu-item routerLink="/home/recherche/kmp">Recherche</li>
+          <li nz-menu-item routerLink="/home/recherche/regex">Recherche avancée</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Suggestion" nzIcon="plus-square">
+        <ul>
+          <li nz-menu-item routerLink="/home/recherche/suggestion">Liste</li>
+        </ul>
+      </li>
+      <div [hidden]="showFlag">
+        <li nz-submenu nzTitle="Gestion" nzIcon="setting" >
+          <ul >
+            <li nz-menu-item routerLink="/home/recherche/reload">Reload</li>
+          </ul>
+        </li>
+      </div>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div nz-row nzJustify="end">
+
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
