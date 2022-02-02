@@ -23,6 +23,7 @@ import { KmpComponent } from './kmp/kmp.component';
 import { SuggestionComponent } from './suggestion/suggestion.component';
 import { ReloadComponent } from './reload/reload.component';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
     RegexComponent,
     KmpComponent,
     SuggestionComponent,
-    ReloadComponent
+    ReloadComponent,
+    TestComponent
   ],
   imports: [
     CommonModule,

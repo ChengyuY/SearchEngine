@@ -6,6 +6,7 @@ import {KmpComponent} from "./kmp/kmp.component";
 import {RegexComponent} from "./regex/regex.component";
 import {SuggestionComponent} from "./suggestion/suggestion.component";
 import {ReloadComponent} from "./reload/reload.component";
+import {TestComponent} from "./test/test.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'reload',
     component: ReloadComponent
+  },
+  {
+    path: 'test',
+    component: TestComponent
   }
 ];
 

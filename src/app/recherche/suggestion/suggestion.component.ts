@@ -30,7 +30,7 @@ export class SuggestionComponent implements OnInit {
   }
 
   recherche(){
-    console.log("Search normal kmp:",this.text)
+    console.log("Search suggestions:",this.text)
     this.load = true
     if (this.text != null) {
       console.log("Book list now:", this.bookList)
